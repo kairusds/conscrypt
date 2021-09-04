@@ -521,7 +521,7 @@ final class SSLParametersImpl implements Cloneable {
             x509KeyManager, pskKeyManager, newTrustManager, this);
     }
 
-    private static X509KeyManager getDefaultX509KeyManager() throws KeyManagementException {
+    public static X509KeyManager getDefaultX509KeyManager() throws KeyManagementException {
         X509KeyManager result = defaultX509KeyManager;
         if (result == null) {
             // single-check idiom
@@ -588,7 +588,7 @@ final class SSLParametersImpl implements Cloneable {
     /**
      * Gets the default X.509 trust manager.
      */
-    static X509TrustManager getDefaultX509TrustManager()
+    public static X509TrustManager getDefaultX509TrustManager()
             throws KeyManagementException {
         X509TrustManager result = defaultX509TrustManager;
         if (result == null) {
